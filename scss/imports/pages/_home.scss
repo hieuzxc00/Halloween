@@ -1,0 +1,487 @@
+.mainwrapper {
+    padding-top: var(--height-header);
+    
+    .home {
+        padding-bottom: 24px;
+        .main-carousel {
+            .flickity-viewport {
+                height: 601.425px !important;
+            }
+        }
+        &__content {
+            row-gap: 16px;
+        }
+        &__group {
+            display: grid;
+            position: relative;
+            padding-top: 32px;
+            .home__img {
+            height: 250px;
+            justify-self: center;
+            }
+        }
+        &__indicator {
+            width: 8px;
+            height: 8px;
+            background-color: $title-cl;
+            border-radius: 50%;
+            position: absolute;
+            top: 112px;
+            right: 32px;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 48px;
+                background-color: $title-cl;
+                top: -48px;
+                right: 45%;
+            }
+        }
+        &__details {
+            &-img {
+                position: absolute;
+                right: 8px;
+            }
+            &-title, &-sub {
+                display: block;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: right;
+            }
+            &-title {
+                color: $title-cl;
+                font-weight: bold;
+            }
+        }
+        &__sub {
+            @include text(16px, 'psb', none, $title-cl, uppercase);
+            margin-bottom: 8px;
+        }
+        &__title {
+            @include text(32px, 'pb', 109%, $title-cl, uppercase);
+            margin-bottom: 8px;
+        }
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+            .button--link {
+                color: $title-cl;
+            }
+            .button--flex {
+                display: inline-flex;
+                align-items: center;
+                column-gap: 8px;
+            }
+            .button__icon {
+                 font-size: 20px;
+            }
+        }
+        &__desc {
+            margin-bottom: 16px;
+            font-size: 15px;
+            @include overtext(3);
+        }
+    }
+
+    .category {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 32px;
+        }
+        &__data {
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                .category__img {
+                    transform: translateY(-8px);
+                }
+            }
+        }
+        &__img {
+            width: 120px;
+            margin-bottom: 12px;
+            transition: .3s;
+        }
+        &__title {
+            @include text(18px, 'psb', normal, $title-cl, none);
+            margin-bottom: 4px;
+        }
+        &__desc {
+            @include text(15px, 'pr', normal, $text-cl, none);
+        }
+    }
+
+    .about {
+        &__container {
+            row-gap: 32px;
+        }
+        &__data {
+            text-align: center;
+        }
+        &__desc {
+            @include text(15px, 'pr', normal, $text-cl, none);
+            margin-bottom: 32px;
+        }
+        &__img {
+            width: 200px;
+            justify-self: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+
+            50% {
+                transform: translatey(-25px);
+            }
+
+            100% {
+                transform: translatey(0px);
+            }
+        }
+    }
+
+    .trick {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            padding-top: 16px;
+        }
+        &__content {
+            position: relative;
+            background: $container-cl;
+            border-radius: 16px;
+            padding: 24px 0 16px 0;
+            text-align: center;
+            overflow: hidden;
+            &:hover {
+                .trick__img {
+                    transform: translateY(-8px);
+                }
+                .trick__button {
+                    right: 0;
+                }
+            }
+        }
+        &__img {
+            height: 90px;
+            transition: .3s;
+        }
+        &__sub, &__price {
+            display: block;
+        }
+        &__sub {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        &__title, &__price {
+            @include text(15px, 'pm', normal, $title-cl, none);
+        }
+        &__button {
+            display: inline-flex;
+            padding: 8px;
+            border-radius: 4px 4px 16px 4px;
+            position: absolute;
+            right: -48px;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+    }
+
+    .discount {
+        &__container {
+            background: $container-cl;
+            border-radius: 16px;
+            padding: 40px 0 24px;
+            row-gap: 12px;
+        }
+        &__data {
+            text-align: center;
+        }
+        &__title {
+            @include text(20px, 'psb', normal, $title-cl, none);
+            margin-bottom: 32px;
+        }
+        &__img {
+            width: 200px;
+            justify-self: center;
+        }
+    }
+
+    .new {
+        &__container {
+            padding-top: 16px;
+        }
+        &__img {
+            width: 120px;
+            margin-bottom: 8px;
+            transition: .3s;
+        }
+        &__list {
+            .flickity-viewport {
+                height: 274.8px !important;
+            }
+        }
+        &__content {
+            position: relative;
+            background: $container-cl;
+            width: 242px;
+            padding: 32px 0 24px 0;
+            margin: 0 8px;
+            border-radius: 16px;
+            text-align: center;
+            overflow: hidden;
+            &:hover {
+                .new__img {
+                    transform: translateY(-8px);
+                }
+                .new__button {
+                    right: 0;
+                }
+            }
+        }
+        &__tag {
+            position: absolute;
+            top: 8%;
+            left: 8%;
+            background-color: hsl(14, 91%, 54%);
+            color: $title-cl;
+            font-size: 13px;
+            line-height: normal;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        &__title {
+            @include text(15px, 'pm', normal, $title-cl, none);
+        }
+        &__sub {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        &__prices {
+            display: inline-flex;
+            align-items: center;
+            column-gap: 8px;
+            &-price {
+                @include text(15px, 'pm', normal, $title-cl, none);
+            }
+            &-discount {
+                @include text(12px, 'pm', normal, hsl(14, 91%, 54%), none);
+                text-decoration: line-through;
+            }
+        }
+        &__button {
+            display: inline-flex;
+            padding: 8px;
+            border-radius: 4px 4px 16px 4px;
+            position: absolute;
+            bottom: 0;
+            right: -48px;
+            cursor: pointer;
+        }
+        &__icon {
+            font-size: 20px;
+        }
+    }
+
+    .newsletter {
+        &__desc {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        &__form {
+            background: $container-cl;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 12px;
+        }
+        &__input {
+            width: 70%;
+            padding: 8px;
+            background: none;
+            color: $title-cl;
+            outline: none;
+            border: none;
+            &::placeholder {
+                color: $text-cl;
+            }
+        }
+    }
+}
+
+@include xxs {
+    .about__container {
+        grid-template-columns: .8fr;
+        justify-content: center;
+    }
+    .newsletter__container {
+        display: grid;
+        grid-template-columns: .8fr;
+        justify-content: center;
+    }
+}
+
+@include xs {
+    .mainwrapper {
+        .home {
+            &__content {
+                padding: 128px 0 32px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 64px;
+            }
+    
+            &__group {
+                .home__img {
+                    height: 300px;
+                }
+            }
+        }
+        .category {
+            &__container {
+                grid-template-columns: repeat(3, 1fr);
+                justify-content: center;
+            }
+        }
+        .about {
+            &__container {
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+            }
+            &__title, &__data {
+                text-align: initial;
+            }
+            &__img {
+                width: 250px;
+            }
+        }
+        .trick {
+            &__container {
+                grid-template-columns: repeat(3, 1fr);
+                justify-content: center;
+            }
+        }
+        .discount {
+            &__container {
+                grid-template-columns: repeat(2, max-content);
+                justify-content: center;
+                align-items: center;
+                column-gap: 48px;
+                padding: 48px 0;
+                border-radius: 48px;
+            }
+            &__img {
+                width: 350px;
+                order: -1;
+            }
+            &__data {
+                padding-right: 96px;
+            }
+        }
+        .newsletter {
+            &__container {
+                grid-template-columns: .6fr;
+            }
+        }
+    }
+    
+}
+
+@include sm {
+    .mainwrapper {
+        .home {
+            &__content {
+                padding-top: 144px;
+                gap: 48px;
+            }
+            &__details {
+                &-title, &-sub {
+                    font-size: 14px;
+                }
+            }
+            &__group {
+                padding-top: 0;
+                .home__img {
+                    height: 400px;
+                    transform: translateY(-80px);
+                }
+            }
+            &__indicator {
+                top: initial;
+                right: initial;
+                bottom: 15%;
+                left: 45%;
+                &::after {
+                    top: 0;
+                    height: 75px;
+                }
+            }
+            &__details-img {
+                bottom: 0;
+                right: 58%;
+            }
+            &__sub {
+                font-size: 20px;
+            }
+            &__title {
+                font-size: 64px;
+                margin-bottom: 24px;
+            }
+            &__desc {
+                font-size: 16px;
+                margin-bottom: 40px;
+                padding-right: 32px;
+            }
+        }
+        .category {
+            &__container {
+                column-gap: 128px;
+            }
+            &__img {
+                width: 200px;
+            }
+        }
+        .about {
+            &__img {
+                width: 350px;
+            }
+            &__desc {
+                padding-right: 32px;
+            }
+        }
+        .trick {
+            &__container {
+                grid-template-columns: repeat(3, 200px);
+                gap: 56px;
+            }
+            &__content {
+                border-radius: 24px;
+            }
+            &__img {
+                height: 110px;
+            }
+        }
+        .new {
+            &__content {
+                width: 310px;
+                border-radius: 16px;
+                padding: 32px 0;
+            }
+            &__img {
+                width: 150px;
+            }
+            &__img, &__sub {
+                margin-bottom: 16px;
+            }
+            &__list {
+                .flickity-viewport {
+                    height: 335.175px !important;
+                }
+            }
+        }
+    }
+}

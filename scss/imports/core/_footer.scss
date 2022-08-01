@@ -1,0 +1,96 @@
+.footer {
+    position: relative;
+    overflow: hidden;
+    &__img-one, &__img-two {
+        position: absolute;
+        transition: .3s;
+        &:hover {
+            transform: translateY(-8px);
+        }
+    }
+    &__img-one {
+        width: 100px;
+        top: 96px;
+        right: -32px;
+    }
+    &__img-two {
+        width: 150px;
+        bottom: 64px;
+        right: 64px;
+    }
+    &__container {
+        row-gap: 32px;
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        margin-bottom: 16px;
+        @include text(15px, 'pm', normal, $title-cl, none);
+        &-img {
+            width: 20px;
+        }
+    }
+    &__desc {
+        @include text(15px, 'pr', normal, $text-cl, none);
+        margin-bottom: 40px;
+    }
+    &__social {
+        display: flex;
+        column-gap: 12px;
+        &-link {
+            display: inline-flex;
+            background: $container-cl;
+            padding: 4px;
+            border-radius: 4px;
+            color: $title-cl;
+            font-size: 16px;
+            &:hover {
+                background: $body-cl;
+            }
+        }
+    }
+    &__title {
+        @include text(16px, 'psb', normal, $title-cl, none);
+        margin-bottom: 16px;
+    }
+    &__links {
+        display: grid;
+        row-gap: 5px;
+    }
+    &__link {
+        @include text(13px, 'pr', normal, $text-cl, none);
+        transition: .3s;
+        &:hover {
+            color: $title-cl;
+        }
+    }
+    &__copy {
+        display: block;
+        text-align: center;
+        @include text(12px, 'pr', normal, $text-cl, none);
+        margin-top: 72px;
+    }
+}
+
+@include xs {
+    .footer {
+        &__container {
+            grid-template-columns: repeat(4, 2fr);
+            justify-items: center;
+            column-gap: 16px;
+        }
+        &__img-two {
+            right: initial;
+            bottom: 0;
+            left: 15%;
+        }
+    }
+}
+@include md {
+    .footer {
+        &__img-two {
+                left: 0;
+            }
+    }
+}

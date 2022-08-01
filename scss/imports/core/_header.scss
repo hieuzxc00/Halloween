@@ -1,0 +1,12 @@
+.header {
+    width: 100%;
+    background: $body-cl;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    &.active {
+        background: $container-cl;
+    }
+    
+}
